@@ -357,6 +357,6 @@ No arquivo styles.css:
 
 Salve, reinicie o servidor, se necessário, e pronto!! 🥳🥳🥳🥳
 
-![/src/assets/imgReadme/sidenav.png](D/src/assets/imgReadme/sidenav.png)
+![/src/assets/imgReadme/sidenav.png](/src/assets/imgReadme/sidenav.png)
 
 Em atualização 👩‍🔧
