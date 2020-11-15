@@ -250,7 +250,7 @@ Criamos a classe footer em footer.component.css, colocamos o footer no bottom da
 
 Salve, reinicie o servidor, se necessário, e pronto!! 🥳🥳🥳🥳
 
-![Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%201.png](Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%201.png)
+![/src/assets/imgReadme/footer.png](/src/assets/imgReadme/footer.png)
 
 # Criando componente Nav
 
@@ -357,6 +357,6 @@ No arquivo styles.css:
 
 Salve, reinicie o servidor, se necessário, e pronto!! 🥳🥳🥳🥳
 
-![Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%202.png](Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%202.png)
+![/src/assets/imgReadme/sidenav.png](D/src/assets/imgReadme/sidenav.png)
 
 Em atualização 👩‍🔧
