@@ -25,6 +25,10 @@ mat-toolbar .title-group {
   padding: 1.5rem
 }
 
+.title-group i {
+  padding: .2rem;
+}
+
 .example-spacer {
   flex: 1 1 auto;
 }
