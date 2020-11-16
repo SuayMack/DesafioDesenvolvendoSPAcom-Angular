@@ -1,22 +1,24 @@
-<button mat-raised-button  (click)="exibirTabela()" color="primary">
+<div class = "MatButtonModule">
+  <button mat-raised-button  (click)="exibirTabela()" color="primary">
     Mostrar Produtos
-</button>
+  </button>
 
-<button mat-raised-button  (click)="esconderTabela()" color="warn">
-    Esconder Produtos
-</button>
+  <button mat-raised-button  (click)="esconderTabela()" color="warn">
+      Esconder Produtos
+  </button>
+</div>
 
-<table *ngIf="exibeTabela">
-    <tr>
-      <th >Nome</th>
-      <th>Descrição</th>
-      <th>Preço</th>
-    </tr>
-    <tr *ngFor="let produto of listaProdutos">
-      <td>{{produto.nome}}</td>
-      <td>{{produto.descricao}}</td>
-      <td>{{produto.preco}}</td>
-    </tr>
-  </table>
+<table class="table" *ngIf="exibeTabela">
+  <tr>
+    <th >Nome</th>
+    <th>Descrição</th>
+    <th>Preço</th>
+  </tr>
+  <tr *ngFor="let produto of listaProdutos">
+    <td>{{produto.nome}}</td>
+    <td>{{produto.descricao}}</td>
+    <td>{{produto.preco}}</td>
+  </tr>
+</table>
 
   
