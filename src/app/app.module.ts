@@ -26,8 +26,7 @@ import { ProductComponent } from './views/product/product.component';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    ProductComponent
-    
+    ProductComponent    
   ],
   imports: [
     BrowserModule,
