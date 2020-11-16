@@ -7,6 +7,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -16,7 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { ProductComponent } from './views/product/product.component';
-import { ProductCreateComponent } from './views/product/product-create/product-create.component'
+
 
 @NgModule({
   declarations: [
@@ -25,8 +26,8 @@ import { ProductCreateComponent } from './views/product/product-create/product-c
     FooterComponent,
     NavComponent,
     HomeComponent,
-    ProductComponent,
-    ProductCreateComponent
+    ProductComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -37,7 +38,8 @@ import { ProductCreateComponent } from './views/product/product-create/product-c
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
