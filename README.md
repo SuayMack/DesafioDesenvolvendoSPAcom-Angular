@@ -283,7 +283,7 @@ Criamos a classe footer em footer.component.css, colocamos o footer no bottom da
 
 Salve, reinicie o servidor, se necessário, e pronto!! 🥳🥳🥳🥳
 
-![Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%201.png](Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%201.png)
+![src/assets/imgReadme/footer.png](src/assets/imgReadme/footer.png)
 
 # Criando componente Nav
 
@@ -390,7 +390,7 @@ No arquivo styles.css:
 
 Salve, reinicie o servidor, se necessário, e pronto!! 🥳🥳🥳🥳
 
-![Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%202.png](Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%202.png)
+![src/assets/imgReadme/sidenav.png](src/assets/imgReadme/sidenav.png)
 
 # Criando componente home em uma pasta views
 
@@ -515,7 +515,7 @@ Em home.component.css, colocamos o CSS para estilizar:
 
 Salve, reinicie o servidor, se necessário, e pronto!! 🥳🥳🥳🥳
 
-![Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%203.png](Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%203.png)
+![src/assets/imgReadme/card.png](src/assets/imgReadme/card.png)
 
 # Criando componente product:
 
@@ -564,7 +564,7 @@ No arquivo nav.component.html, colocamos o código HTML, para testar o component
 
 Salve, reinicie o servidor, se necessário, e pronto!! 🥳🥳🥳🥳
 
-![Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%204.png](Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%204.png)
+![src/assets/imgReadme/produto.png](src/assets/imgReadme/produto.png)
 
 # Trabalhando com a navegação dos componentes home e product -Routing
 
@@ -766,4 +766,4 @@ padding: 8px;
 
 Salve, reinicie o servidor, se necessário, e pronto!! 🥳🥳🥳🥳
 
-![Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%205.png](Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%205.png)
+![src/assets/imgReadme/final.png](src/assets/imgReadme/final.png)
