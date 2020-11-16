@@ -7,7 +7,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
-import {MatTableModule} from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -37,8 +36,7 @@ import { ProductComponent } from './views/product/product.component';
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    MatButtonModule,
-    MatTableModule
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
