@@ -100,7 +100,7 @@ apagamos os arquivos app.component.spec.ts e header.components.spec.ts , já que
 
 Com o servidor iniciado, verifique se o [localhost:4200](http://localhost:4200) diz: "header works!", funcionou! 🥳
 
-## Adicionando componente Tollbar do Material Angular
+## Adicionando componente Tollbar do Angular Material
 
 Escolhemos o componente no site [https://material.angular.io/components/categories](https://material.angular.io/components/categories).
 
@@ -132,12 +132,12 @@ Em Examples vamos escolher o Basic toolbar, em HTML copiamos seu código  e em h
 E colocamos o código, como eu quero que fique com uma sombra no toolbar, coloco uma classe pronta do material mat-elevation-z4:
 
 ```html
-<mat-toolbar class="mat-elevation-z4">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button> 
-  <span>My App</span>
-  <span class="example-spacer"></span>
+<mat-toolbar class="header mat-elevation-z4">
+  <span>
+        <a>
+            <img src="../../assets/img/logo.png" alt="logo">
+        </a>
+    </span>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>favorite</mat-icon>
   </button>
@@ -146,6 +146,8 @@ E colocamos o código, como eu quero que fique com uma sombra no toolbar, coloco
   </button>
 </mat-toolbar>
 ```
+
+## Adicionando componente **MatIconModule** do Angular Material
 
 Como nosso componente tem um componente filho <mat-icon>, para nos antecipar de qualquer erro, faremos a importação do filho também, na barra lateral do Material, vamos em **Icon**, em **API** importaremos o **MatIconModule** do mesmo jeito que importamos o MatToolbarModule
 
@@ -167,9 +169,40 @@ Na página do Material:
 
 Toolbar 👉 Examples 👉 < > 👉 CSS
 
-Copie o código e cole em header.component.html:
+Copie o código e cole em header.component.html e vamos fazer estilizar o header:
 
 ```css
+header {
+  display: flex;
+  align-items: center;
+}
+
+.header a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header .logo {
+  height: 45px;
+}
+
+mat-toolbar {
+  justify-content: space-between;
+}
+mat-toolbar .logo-image {
+  padding-left: 1.5rem;
+}
+
+mat-toolbar .title-group {
+  display: flex;
+  padding: 1.5rem
+}
+
+.title-group i {
+  padding: .2rem;
+}
+
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -177,7 +210,7 @@ Copie o código e cole em header.component.html:
 
 Salve, reinicie o servidor, se necessário, e pronto!! 🥳🥳🥳🥳
 
-![/src/assets/imgReadme/toolbar.png](/src/assets/imgReadme/toolbar.png)
+![src/assets/imgReadme/toolbar.png](src/assets/imgReadme/toolbar.png)
 
 # Criando componente footer
 
@@ -250,7 +283,7 @@ Criamos a classe footer em footer.component.css, colocamos o footer no bottom da
 
 Salve, reinicie o servidor, se necessário, e pronto!! 🥳🥳🥳🥳
 
-![/src/assets/imgReadme/footer.png](/src/assets/imgReadme/footer.png)
+![Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%201.png](Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%201.png)
 
 # Criando componente Nav
 
@@ -266,7 +299,7 @@ Em app.componente.html coloque o footer:
 <spa-footer></spa-footer>
 ```
 
-## Adicionando componente Sidenav do Material Angular
+## Adicionando componente Sidenav do Angular Material
 
 Importamos o modulo MatSidenavModule no arquivo app.module.ts:
 
@@ -357,6 +390,380 @@ No arquivo styles.css:
 
 Salve, reinicie o servidor, se necessário, e pronto!! 🥳🥳🥳🥳
 
-![/src/assets/imgReadme/sidenav.png](/src/assets/imgReadme/sidenav.png)
+![Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%202.png](Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%202.png)
 
-Em atualização 👩‍🔧
+# Criando componente home em uma pasta views
+
+```bash
+ng g c views/home
+```
+
+Em app.module.ts, importamos o componente home:
+
+```tsx
+import { HomeComponent } from './views/home/home.component'
+...
+declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    NavComponent,
+    HomeComponent
+  ],
+```
+
+Em nav.componente.html coloque o home:
+
+```html
+<mat-sidenav-container class="container">   
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+        <mat-nav-list class="nav-list">
+            <a mat-list-item>
+                <i class="material-icons">
+                    home
+                </i>
+                Inicio
+            </a>
+            <a mat-list-item>
+                <i class="material-icons">
+                    store
+                </i>
+                Produtos
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>    
+    <mat-sidenav-container>
+        <spa-home></spa-home>
+    </mat-sidenav-container>
+</mat-sidenav-container>
+```
+
+## Adicionando componente Card do Angular Material
+
+Importamos o modulo MatCardModule no arquivo app.module.ts:
+
+```tsx
+import {MatCardModule} from '@angular/material/card';
+```
+
+Em imports:
+
+```tsx
+imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+		MatCardModule
+  ],
+```
+
+No arquivo nav.component.html, colocamos o código HTML, para testar o componente home, depois essa rota será alternada entre os componentes.
+
+```html
+<mat-sidenav-container class="container">   
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+        <mat-nav-list class="nav-list">
+            <a mat-list-item>
+                <i class="material-icons">
+                    home
+                </i>
+                Inicio
+            </a>
+            <a mat-list-item>
+                <i class="material-icons">
+                    store
+                </i>
+                Produtos
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>    
+    <mat-sidenav-content class="content">
+        <spa-home></spa-home>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+```
+
+No arquivo home.component.html, colocamos o código HTML.
+
+```html
+<mat-card class="home mat-elevation-z3">
+    <mat-card-title class="title">
+        Bem Vindo!
+    </mat-card-title>
+    <mat-card-subtitle class="subtitle">
+        Cadastro
+    </mat-card-subtitle>
+</mat-card>
+```
+
+Em home.component.css, colocamos o CSS para estilizar:
+
+```html
+.home {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height:1.2;
+}
+
+.home.subtitle {
+    font-size: 1.1rem;
+}
+```
+
+Salve, reinicie o servidor, se necessário, e pronto!! 🥳🥳🥳🥳
+
+![Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%203.png](Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%203.png)
+
+# Criando componente product:
+
+```bash
+ng g c views/productEm app.module.ts, importamos o componente home, caso não importe automaticamente:
+```
+
+```tsx
+import { ProductComponent } from './views/home/home.component'
+...
+declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    NavComponent,
+    HomeComponent,
+		ProductComponent
+  ],
+```
+
+No arquivo nav.component.html, colocamos o código HTML, para testar o componente product, depois essa rota será alternada entre os componentes.
+
+```html
+<mat-sidenav-container class="container">   
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+        <mat-nav-list class="nav-list">
+            <a mat-list-item>
+                <i class="material-icons">
+                    home
+                </i>
+                Inicio
+            </a>
+            <a mat-list-item>
+                <i class="material-icons">
+                    store
+                </i>
+                Produtos
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>    
+    <mat-sidenav-content class="content">
+        <spa-product></spa-product>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+```
+
+Salve, reinicie o servidor, se necessário, e pronto!! 🥳🥳🥳🥳
+
+![Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%204.png](Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%204.png)
+
+# Trabalhando com a navegação dos componentes home e product -Routing
+
+No arquivo nav.component.html, alteramos para o código HTML da rota, que é o elemento que será substituído sempre que houver uma navegação, que será apontado pelo no arquivo app-routing.modules.ts.
+
+```html
+<mat-sidenav-container class="container">   
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+        <mat-nav-list class="nav-list">
+            <a mat-list-item>
+                <i class="material-icons">
+                    home
+                </i>
+                Inicio
+            </a>
+            <a mat-list-item>
+                <i class="material-icons">
+                    store
+                </i>
+                Produtos
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>    
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+```
+
+Em app-routing.modules.ts, vamos colocar as rotas de substituição:
+
+```tsx
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './views/home/home.component';
+import { ProductComponent } from './views/product/product.component';
+
+const routes: Routes = [
+  {
+    path: "",
+    component: HomeComponent,
+  },
+  {
+    path: "products",
+    component: ProductComponent
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+```
+
+## Criando o Model para nossa tabela de produtos
+
+Na pasta product, crie uma pasta models e um arquivo products.ts, no arquivo:
+
+```tsx
+export class produtos {
+    nome: string;
+    descricao: string;
+    preco:string;
+}
+```
+
+## Adicionando componente MatButtonModule do Angular Material
+
+Em app.module.ts vamos importar o módulo:
+
+```tsx
+import {MatButtonModule} from '@angular/material/button';
+...
+imports: [
+...
+	MatButtonModule,
+],
+
+```
+
+Criando Botões mostrar tabela e esconder tabela de produtos e criando nossa tabela
+
+Em product.component.html, colocamos os botões e já chamamos o evento exibirTabela() e esconderTabela() que já vamos criar:
+
+```html
+<button mat-raised-button  (click)="exibirTabela()" color="primary">
+    Mostrar Produtos
+</button>
+
+<button mat-raised-button  (click)="esconderTabela()" color="warn">
+    Esconder Produtos
+</button>
+
+<table *ngIf="exibeTabela">
+    <tr>
+      <th >Nome</th>
+      <th>Descrição</th>
+      <th>Preço</th>
+    </tr>
+    <tr *ngFor="let produto of listaProdutos">
+      <td>{{produto.nome}}</td>
+      <td>{{produto.descricao}}</td>
+      <td>{{produto.preco}}</td>
+    </tr>
+  </table>
+```
+
+## Criando a lista de produtos e os métodos exibir tabela e esconder tabela
+
+Em product.component.ts, importamos o model product.ts, criamos a lista e os métodos.
+
+```tsx
+import { Component, OnInit } from '@angular/core';
+import { produtos } from './models/products';
+
+@Component({
+  selector: 'spa-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.css']
+})
+
+export class ProductComponent implements OnInit {
+  
+ 
+  constructor() { }
+
+    ngOnInit(): void {
+  }
+
+  valor: number;
+  exibeTabela:  boolean = false;
+
+  listaProdutos: produtos[] = [
+    { nome: 'Call Of Duty',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      preco: 'R$ 160,00'
+    },
+    { nome: 'Call Of Duty2',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      preco: 'R$ 260,00'
+    },
+    { nome: 'Call Of Duty3',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      preco: 'R$ 360,00'
+    }    
+  ];
+
+  displayedColumns: string[] = ['Nome', 'Descrição', 'Preço'];
+
+  exibirTabela(){
+    this.exibeTabela = true;
+  }
+
+  esconderTabela(){
+    this.exibeTabela = false;
+  }
+   
+}
+```
+
+colocamos um CSS na table e nos botões, em product.components.css:
+
+```css
+.MatButtonModule {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.table {
+    margin-top: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+.table td, .table th {
+border: 1px solid #ddd;
+padding: 8px;
+}
+
+.table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.table tr:hover {
+    background-color: #ddd;
+}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #A485A4;
+    color: white;
+}
+```
+
+Salve, reinicie o servidor, se necessário, e pronto!! 🥳🥳🥳🥳
+
+![Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%205.png](Desenvolvendo%20SPA%20com%20Angular%20-%20spaangular%2020e9781023f646ebab9ae14e3c28a005/Untitled%205.png)
