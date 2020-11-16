@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { produtos } from './models/products'
-
+import { produtos } from './models/products';
 
 @Component({
   selector: 'spa-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit {
 
+export class ProductComponent implements OnInit {
+  
+ 
   constructor() { }
 
     ngOnInit(): void {
